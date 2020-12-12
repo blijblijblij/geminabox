@@ -11,25 +11,25 @@ It can backup all gems (including dependencies) from your project Gemfile to the
 Quickstart
 ----------
 
-	docker run -d -p 9292:9292 --name geminabox spoonest/geminabox:latest
+	docker run -d -p 9292:9292 --name geminabox blijblijblij/geminabox:latest
 
 Authentication
 --------------
 
 You can limit **upload** and **remove** access by adding `-e USERNAME=myuser -e PASSWORD=mypassword` variables right after `run` command.
 
-	docker run -d -p 9292:9292 -P -h geminabox --name geminabox -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
+	docker run -d -p 9292:9292 -P -h geminabox --name geminabox -e USERNAME=myuser -e PASSWORD=mypassword blijblijblij/geminabox:latest
 
 Also you can limit any access to your repository by adding `-e PRIVATE=true` variables right after `run` command.
 
-	docker run -d -p 9292:9292 -P -h geminabox --name geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
+	docker run -d -p 9292:9292 -P -h geminabox --name geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword blijblijblij/geminabox:latest
 
 Folder to store saved gems
 --------------------------
 
 It's recommended to store saved gems outside your docker container. Use docker volumes `-v` to specify storage location:
 
-	docker run -d -v /path_where_to_store_gems:/webapps/geminabox/data --name geminabox -p 9292:9292 -P -h geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword spoonest/geminabox:latest
+	docker run -d -v /path_where_to_store_gems:/webapps/geminabox/data --name geminabox -p 9292:9292 -P -h geminabox -e PRIVATE=true -e USERNAME=myuser -e PASSWORD=mypassword blijblijblij/geminabox:latest
 
 If you need to enter in the app, use docker exec since Docker 1.3 https://github.com/ahmet2mir/docker-memo
 
