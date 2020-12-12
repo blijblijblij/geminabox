@@ -29,4 +29,4 @@ jobs:
           cd dockerfiles/puma && \
           docker build \
           --tag blijblijblij/geminabox:1.2.0 \
-          --platform linux/amd64,linux/arm/v7,linux/arm64 . 
+          --platform linux/amd64,linux/arm64 . 
